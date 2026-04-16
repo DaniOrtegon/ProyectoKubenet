@@ -74,12 +74,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: minio-secret
-                  key: access-key       # Nota: usa las claves 'access-key'/'secret-key' (mismo valor que root en desarrollo)
+                  key: root-user        # Corregido: el secret en namespace 'storage' usa root-user/root-password
             - name: MINIO_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: minio-secret
-                  key: secret-key
+                  key: root-password
           resources:
             requests:
               cpu: 50m
